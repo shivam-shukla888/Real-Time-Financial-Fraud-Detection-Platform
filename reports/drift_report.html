@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Financial Fraud Detection — Data Drift Report</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background:#0f172a; color:#f8fafc; padding:24px; }
+        .card { background:#1e293b; border-radius:12px; padding:24px; border:1px solid #334155; margin-bottom:20px; }
+        h1, h2 { margin-top:0; }
+        table { width:100%; border-collapse:collapse; margin-top:16px; text-align:left; }
+        th { background:#0f172a; padding:12px; border-bottom:2px solid #475569; font-size:13px; text-transform:uppercase; }
+        .banner { background:#ef4444; color:#fff; padding:12px 16px; border-radius:8px; font-weight:700; display:inline-block; margin-bottom:16px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Financial Fraud Detection — Data Drift Report</h1>
+        <div class="banner">DATA DRIFT DETECTED</div>
+        <p><strong>Generated At:</strong> 2026-10-27T00:42:22.220036</p>
+        <p><strong>Engine:</strong> Statistical Drift Fallback (KS-Test + PSI) [Evidently Python 3.14 compatible]</p>
+        <p><strong>Drift Share:</strong> 81.2% (13/16 features drifted)</p>
+        <p><strong>Retraining Action:</strong> PENDING_APPROVAL (Approval required prior to production deployment)</p>
+    </div>
+
+    <div class="card">
+        <h2>Feature-Level Distribution Analysis</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature Name</th>
+                    <th>Ref Mean</th>
+                    <th>Curr Mean</th>
+                    <th>KS Statistic</th>
+                    <th>p-value</th>
+                    <th>PSI Score</th>
+                    <th>Drift Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            <tr>
+                <td style="font-weight:600; padding:10px; border-bottom:1px solid #334155;">amount</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">138.39</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">465.94</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.497</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.0</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">2.715</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">
+                    <span style="background:#ef4444; color:#fff; padding:3px 8px; border-radius:4px; font-size:12px;">DRIFTED</span>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="font-weight:600; padding:10px; border-bottom:1px solid #334155;">amount_log</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">4.27</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">5.44</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.497</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.0</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">2.715</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">
+                    <span style="background:#ef4444; color:#fff; padding:3px 8px; border-radius:4px; font-size:12px;">DRIFTED</span>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="font-weight:600; padding:10px; border-bottom:1px solid #334155;">txn_count_1h</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.29</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.01</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.2213</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.0</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.7986</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">
+                    <span style="background:#ef4444; color:#fff; padding:3px 8px; border-radius:4px; font-size:12px;">DRIFTED</span>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="font-weight:600; padding:10px; border-bottom:1px solid #334155;">txn_count_24h</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">3.1</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.2</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.6887</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.0</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">7.3286</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">
+                    <span style="background:#ef4444; color:#fff; padding:3px 8px; border-radius:4px; font-size:12px;">DRIFTED</span>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="font-weight:600; padding:10px; border-bottom:1px solid #334155;">txn_count_7d</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">4.26</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.57</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.635</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.0</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">5.2955</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">
+                    <span style="background:#ef4444; color:#fff; padding:3px 8px; border-radius:4px; font-size:12px;">DRIFTED</span>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="font-weight:600; padding:10px; border-bottom:1px solid #334155;">amount_sum_1h</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">39.55</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">3.88</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.2213</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.0</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.6593</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">
+                    <span style="background:#ef4444; color:#fff; padding:3px 8px; border-radius:4px; font-size:12px;">DRIFTED</span>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="font-weight:600; padding:10px; border-bottom:1px solid #334155;">amount_sum_24h</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">409.94</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">97.63</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.6887</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.0</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">1.9826</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">
+                    <span style="background:#ef4444; color:#fff; padding:3px 8px; border-radius:4px; font-size:12px;">DRIFTED</span>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="font-weight:600; padding:10px; border-bottom:1px solid #334155;">amount_to_hist_avg_ratio</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">1.69</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">3.1</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.258</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.0</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.3882</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">
+                    <span style="background:#ef4444; color:#fff; padding:3px 8px; border-radius:4px; font-size:12px;">DRIFTED</span>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="font-weight:600; padding:10px; border-bottom:1px solid #334155;">is_new_device</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.12</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.32</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.4053</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.0</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.7515</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">
+                    <span style="background:#ef4444; color:#fff; padding:3px 8px; border-radius:4px; font-size:12px;">DRIFTED</span>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="font-weight:600; padding:10px; border-bottom:1px solid #334155;">is_new_location</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.11</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.27</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.3707</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.0</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.6489</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">
+                    <span style="background:#ef4444; color:#fff; padding:3px 8px; border-radius:4px; font-size:12px;">DRIFTED</span>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="font-weight:600; padding:10px; border-bottom:1px solid #334155;">device_account_count</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">1.89</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.89</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.3557</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.0</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.8643</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">
+                    <span style="background:#ef4444; color:#fff; padding:3px 8px; border-radius:4px; font-size:12px;">DRIFTED</span>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="font-weight:600; padding:10px; border-bottom:1px solid #334155;">hour_of_day</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">8.03</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">10.24</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.1433</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.0</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.1125</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">
+                    <span style="background:#10b981; color:#fff; padding:3px 8px; border-radius:4px; font-size:12px;">STABLE</span>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="font-weight:600; padding:10px; border-bottom:1px solid #334155;">day_of_week</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">3.3</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">3.22</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.22</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.0</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">3.6715</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">
+                    <span style="background:#ef4444; color:#fff; padding:3px 8px; border-radius:4px; font-size:12px;">DRIFTED</span>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="font-weight:600; padding:10px; border-bottom:1px solid #334155;">is_night</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.53</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.4</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.135</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.0</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.0738</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">
+                    <span style="background:#10b981; color:#fff; padding:3px 8px; border-radius:4px; font-size:12px;">STABLE</span>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="font-weight:600; padding:10px; border-bottom:1px solid #334155;">is_weekend</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.02</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.22</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.203</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.0</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.0</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">
+                    <span style="background:#10b981; color:#fff; padding:3px 8px; border-radius:4px; font-size:12px;">STABLE</span>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="font-weight:600; padding:10px; border-bottom:1px solid #334155;">category_risk_prior</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.2</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.54</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.601</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">0.0</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">7.354</td>
+                <td style="padding:10px; border-bottom:1px solid #334155;">
+                    <span style="background:#ef4444; color:#fff; padding:3px 8px; border-radius:4px; font-size:12px;">DRIFTED</span>
+                </td>
+            </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

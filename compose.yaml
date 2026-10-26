@@ -1,0 +1,57 @@
+name: real-time-fraud-detection
+
+services:
+  fraud-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: real-time-fraud-detection-api:latest
+    container_name: fraud_api
+    restart: unless-stopped
+    ports:
+      - "8010:8010"
+    environment:
+      - FRAUD_HOST=0.0.0.0
+      - FRAUD_PORT=8010
+      - FRAUD_ENVIRONMENT=production
+      - FRAUD_STREAMING_BACKEND=local
+    volumes:
+      - ./data:/app/data
+      - ./artifacts:/app/artifacts
+      - ./reports:/app/reports
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8010/health || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  fraud-dashboard:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: real-time-fraud-detection-dashboard:latest
+    container_name: fraud_dashboard
+    restart: unless-stopped
+    ports:
+      - "5173:5173"
+    depends_on:
+      fraud-api:
+        condition: service_healthy
+
+  # Optional real Kafka broker (Opt-in via: docker compose --profile kafka up)
+  kafka-broker:
+    image: redpandadata/redpanda:v24.1.2
+    container_name: fraud_kafka
+    profiles:
+      - kafka
+    command:
+      - redpanda
+      - start
+      - --smp=1
+      - --memory=512M
+      - --overprovisioned
+      - --kafka-addr=PLAINTEXT://0.0.0.0:9092
+      - --advertise-kafka-addr=PLAINTEXT://localhost:9092
+    ports:
+      - "9092:9092"

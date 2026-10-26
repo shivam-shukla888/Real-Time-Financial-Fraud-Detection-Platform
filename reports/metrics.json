@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-10-27T00:30:22.967192",
+  "model_type": "XGBoost",
+  "dataset_type": "synthetic_educational_sample",
+  "test_records": 900,
+  "test_fraud_count": 29,
+  "test_fraud_prevalence": 0.0322,
+  "pr_auc": 0.9978,
+  "roc_auc": 0.9999,
+  "precision": 1.0,
+  "recall": 0.9655,
+  "f1_score": 0.9825,
+  "confusion_matrix": {
+    "true_negatives": 871,
+    "false_positives": 0,
+    "false_negatives": 1,
+    "true_positives": 28
+  },
+  "false_positive_rate": 0.0,
+  "false_negative_rate": 0.0345,
+  "training_time_seconds": 0.16
+}

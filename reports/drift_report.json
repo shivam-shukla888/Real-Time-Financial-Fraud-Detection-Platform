@@ -1,0 +1,142 @@
+{
+  "timestamp": "2026-10-27T00:42:22.220036",
+  "engine": "Statistical Drift Fallback (KS-Test + PSI) [Evidently Python 3.14 compatible]",
+  "reference_records": 3000,
+  "current_records": 500,
+  "total_features": 16,
+  "drifted_features_count": 13,
+  "drift_share": 0.8125,
+  "dataset_drift_detected": true,
+  "retraining_recommended": true,
+  "approval_status": "PENDING_APPROVAL",
+  "features": {
+    "amount": {
+      "p_value": 0.0,
+      "ks_statistic": 0.497,
+      "psi_score": 2.715,
+      "drift_detected": true,
+      "reference_mean": 138.39,
+      "current_mean": 465.94
+    },
+    "amount_log": {
+      "p_value": 0.0,
+      "ks_statistic": 0.497,
+      "psi_score": 2.715,
+      "drift_detected": true,
+      "reference_mean": 4.27,
+      "current_mean": 5.44
+    },
+    "txn_count_1h": {
+      "p_value": 0.0,
+      "ks_statistic": 0.2213,
+      "psi_score": 0.7986,
+      "drift_detected": true,
+      "reference_mean": 0.29,
+      "current_mean": 0.01
+    },
+    "txn_count_24h": {
+      "p_value": 0.0,
+      "ks_statistic": 0.6887,
+      "psi_score": 7.3286,
+      "drift_detected": true,
+      "reference_mean": 3.1,
+      "current_mean": 0.2
+    },
+    "txn_count_7d": {
+      "p_value": 0.0,
+      "ks_statistic": 0.635,
+      "psi_score": 5.2955,
+      "drift_detected": true,
+      "reference_mean": 4.26,
+      "current_mean": 0.57
+    },
+    "amount_sum_1h": {
+      "p_value": 0.0,
+      "ks_statistic": 0.2213,
+      "psi_score": 0.6593,
+      "drift_detected": true,
+      "reference_mean": 39.55,
+      "current_mean": 3.88
+    },
+    "amount_sum_24h": {
+      "p_value": 0.0,
+      "ks_statistic": 0.6887,
+      "psi_score": 1.9826,
+      "drift_detected": true,
+      "reference_mean": 409.94,
+      "current_mean": 97.63
+    },
+    "amount_to_hist_avg_ratio": {
+      "p_value": 0.0,
+      "ks_statistic": 0.258,
+      "psi_score": 0.3882,
+      "drift_detected": true,
+      "reference_mean": 1.69,
+      "current_mean": 3.1
+    },
+    "is_new_device": {
+      "p_value": 0.0,
+      "ks_statistic": 0.4053,
+      "psi_score": 0.7515,
+      "drift_detected": true,
+      "reference_mean": 0.12,
+      "current_mean": 0.32
+    },
+    "is_new_location": {
+      "p_value": 0.0,
+      "ks_statistic": 0.3707,
+      "psi_score": 0.6489,
+      "drift_detected": true,
+      "reference_mean": 0.11,
+      "current_mean": 0.27
+    },
+    "device_account_count": {
+      "p_value": 0.0,
+      "ks_statistic": 0.3557,
+      "psi_score": 0.8643,
+      "drift_detected": true,
+      "reference_mean": 1.89,
+      "current_mean": 0.89
+    },
+    "hour_of_day": {
+      "p_value": 0.0,
+      "ks_statistic": 0.1433,
+      "psi_score": 0.1125,
+      "drift_detected": false,
+      "reference_mean": 8.03,
+      "current_mean": 10.24
+    },
+    "day_of_week": {
+      "p_value": 0.0,
+      "ks_statistic": 0.22,
+      "psi_score": 3.6715,
+      "drift_detected": true,
+      "reference_mean": 3.3,
+      "current_mean": 3.22
+    },
+    "is_night": {
+      "p_value": 0.0,
+      "ks_statistic": 0.135,
+      "psi_score": 0.0738,
+      "drift_detected": false,
+      "reference_mean": 0.53,
+      "current_mean": 0.4
+    },
+    "is_weekend": {
+      "p_value": 0.0,
+      "ks_statistic": 0.203,
+      "psi_score": 0.0,
+      "drift_detected": false,
+      "reference_mean": 0.02,
+      "current_mean": 0.22
+    },
+    "category_risk_prior": {
+      "p_value": 0.0,
+      "ks_statistic": 0.601,
+      "psi_score": 7.354,
+      "drift_detected": true,
+      "reference_mean": 0.2,
+      "current_mean": 0.54
+    }
+  }
+}

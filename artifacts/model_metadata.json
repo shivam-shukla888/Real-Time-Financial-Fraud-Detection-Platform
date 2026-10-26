@@ -1,0 +1,24 @@
+{
+  "model_type": "XGBoost",
+  "trained_at": "2026-10-27T00:30:22.966364",
+  "training_duration_seconds": 0.16,
+  "random_seed": 42,
+  "n_train": 4200,
+  "n_val": 900,
+  "n_test": 900,
+  "scale_pos_weight": 55.0,
+  "hyperparameters": {
+    "n_estimators": "120",
+    "max_depth": "5",
+    "learning_rate": "0.08",
+    "scale_pos_weight": "55.0",
+    "subsample": "0.85",
+    "colsample_bytree": "0.85",
+    "random_state": "42",
+    "tree_method": "hist",
+    "eval_metric": "logloss"
+  },
+  "feature_count": 16,
+  "dataset_is_synthetic": true,
+  "operational_threshold": 0.5
+}
